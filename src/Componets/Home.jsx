@@ -24,6 +24,8 @@ function Home() {
 
   const filtered = products.filter((data) =>
     data.title.toLowerCase().includes(search.toLowerCase())
+    ||
+    data.price >= search
   );
 
   return (
@@ -47,6 +49,9 @@ function Home() {
                   </a>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {product.description}
+                  </p>
+                  <p className="mb-3 font-normal text-orange-700 dark:text-gray-400">
+                   ${product.price}
                   </p>
                   {
                     <Link
